@@ -1,6 +1,7 @@
 package com.pc.fx;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -13,7 +14,8 @@ public class HelloController {
 	@FXML
 	private Label welcomeText;
 
-	private FileChooser fileChooser = new FileChooser();
+	private File sourceFile;
+
 
 	@FXML
 	protected void onHelloButtonClick() {
@@ -31,10 +33,24 @@ public class HelloController {
 		File file = fileChooser.showOpenDialog(selectFile);
 		if (file != null) {
 			System.out.println(file.getPath());
+			sourceFile = file;
 			//				bom.initBOM(ExcelUtil.importExcel(Util.getWorkbok(new FileInputStream(file), file)));
 //				session.commit();
 //				session.close();
 
 		}
+	}
+
+	@FXML
+	protected void onFileConfirmButtonClick() {
+		if (sourceFile == null) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.setContentText("警告提示！");
+			alert.show();
+		} else {
+			System.out.println(sourceFile.getPath());
+
+		}
+
 	}
 }
