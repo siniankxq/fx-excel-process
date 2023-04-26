@@ -128,7 +128,7 @@
                     <reflectionList>
                         <list>com.pc.fx.HelloController</list>
                     </reflectionList>
-                    <graalvmHome>C:\soft\java\graalvm-ce-java17-22.3.0</graalvmHome>
+                    <graalvmHome>D:\java\graalvm-ce-java17-22.3.1</graalvmHome>
                 </configuration>
             </plugin>
         </plugins>
