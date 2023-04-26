@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ypc.fx.controller.ExcelProcessController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="excel处理工具" fx:id="welcomeText"/>
+    <Label text="源文件：" fx:id="sourceLabel"/>
+    <Label text="目标文件：" fx:id="targetLabel"/>
+<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+    <Button text="请选择源文件" fx:id="sourceButton" onAction="#onSourceFileButtonClick"/>
+    <Button text="请选择目标文件" fx:id="targetButton" onAction="#onTargetFileButtonClick"/>
+    <TextField text="输入数据导入目标文件的开始行" fx:id="targetBeginRow" />
+    <Button text="选择完成请点击确定开始导入数据" onAction="#onFileConfirmButtonClick"/>
+</VBox>
+
