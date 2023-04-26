@@ -3,8 +3,7 @@ package com.ypc.fx.util;
 import com.ypc.fx.config.RuoYiConfig;
 import com.ypc.fx.constant.Constants;
 import org.apache.poi.util.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
@@ -20,7 +19,6 @@ import java.util.Arrays;
  */
 public class ImageUtils
 {
-    private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);
 
     public static byte[] getImage(String imagePath)
     {
@@ -31,7 +29,7 @@ public class ImageUtils
         }
         catch (Exception e)
         {
-            log.error("图片加载异常 {}", e);
+
             return null;
         }
         finally
@@ -50,7 +48,6 @@ public class ImageUtils
         }
         catch (Exception e)
         {
-            log.error("获取图片异常 {}", e);
         }
         return null;
     }
@@ -87,7 +84,6 @@ public class ImageUtils
         }
         catch (Exception e)
         {
-            log.error("获取文件路径异常 {}", e);
             return null;
         }
         finally

@@ -8,9 +8,9 @@ module com.ypc.fx {
 	requires java.management;
 	requires org.apache.commons.io;
 	requires poi.ooxml.schemas;
-	requires org.slf4j;
+//	requires org.slf4j;
 	requires cn.hutool.core;
-	requires static lombok;
+//	requires static lombok;
 
 
 	opens com.ypc.fx to javafx.fxml;

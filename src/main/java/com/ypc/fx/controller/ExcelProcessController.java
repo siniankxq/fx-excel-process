@@ -8,13 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 
 
-@Slf4j
 public class ExcelProcessController {
 	@FXML
 	private Label welcomeText;
@@ -53,7 +51,6 @@ public class ExcelProcessController {
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Excel", "*.xls", "*.xlsx"), new FileChooser.ExtensionFilter("XLS", "*.xls"), new FileChooser.ExtensionFilter("XLSX", "*.xlsx"));
 		File file = fileChooser.showOpenDialog(selectFile);
 		if (file != null) {
-			log.info("选择的源文件地址：{}", file.getPath());
 			sourceFile = file;
 			sourceLabel.setText("源文件：" + file.getPath());
 			sourceButton.setText(file.getPath());
@@ -71,7 +68,6 @@ public class ExcelProcessController {
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Excel", "*.xls", "*.xlsx"), new FileChooser.ExtensionFilter("XLS", "*.xls"), new FileChooser.ExtensionFilter("XLSX", "*.xlsx"));
 		File file = fileChooser.showOpenDialog(selectFile);
 		if (file != null) {
-			log.info("选择的目标文件地址：{}", file.getPath());
 			targetFile = file;
 			targetLabel.setText("目标文件地址：" + file.getPath());
 			targetButton.setText(file.getPath());
@@ -91,7 +87,6 @@ public class ExcelProcessController {
 		} else {
 			try {
 				int beginRow = Integer.parseInt(targetBeginRow.getText());
-				log.info("源文件: " + sourceFile.getPath() + " 目标文件: " + targetFile.getPath());
 				try {
 					String newTargetFileName = targetFile.getParent() + File.separator + "备份" + File.separator + targetFile.getName();
 					File newTargetFile = new File(newTargetFileName);
@@ -102,7 +97,6 @@ public class ExcelProcessController {
 					alert.setContentText("处理成功，新文件的地址为：" + newTargetFileName);
 					alert.show();
 				} catch (Exception e) {
-					log.error("文件处理异常", e);
 					Alert alert = new Alert(Alert.AlertType.WARNING);
 					alert.setContentText("文件处理异常，请重试");
 					alert.show();

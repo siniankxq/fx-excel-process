@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
@@ -15,7 +14,6 @@ import java.io.IOException;
  * 1. 使用cmd 执行 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
  * 打包命令: mvn clean gluonfx:build
  */
-@Slf4j
 public class ExcelProcessApplication extends Application {
 	@Override
 	public void start(Stage stage) throws IOException {
@@ -25,11 +23,10 @@ public class ExcelProcessApplication extends Application {
 		stage.setScene(scene);
 		stage.show();
 		stage.setOnCloseRequest(event -> {
-			log.info("程序关闭");
+			System.out.println("程序关闭");
 			System.exit(0);
 		});
 		System.out.println("程序启动");
-		log.info("程序启动");
 
 	}
 

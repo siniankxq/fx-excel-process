@@ -3,8 +3,6 @@ package com.ypc.fx.handler;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.ypc.fx.util.PoiExcelUtil;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.hssf.model.InternalSheet;
 import org.apache.poi.hssf.record.DVRecord;
@@ -14,6 +12,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,7 +21,6 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 
-@Slf4j
 public class DemoDataListener {
 
 	public static final Map<String, String> MAPPING = new HashMap<>();
@@ -155,7 +153,7 @@ public class DemoDataListener {
 			fos = new FileOutputStream(writeFile);
 			workbook.write(fos);
 		} catch (Exception e) {
-			log.error("writeInExcel error", e);
+			System.out.println("writeInExcel error");
 		} finally {
 			IOUtils.close(fos);
 			IOUtils.close(fis);

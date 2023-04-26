@@ -3,8 +3,7 @@ package com.ypc.fx.util;
 import com.ypc.fx.text.Convert;
 import org.apache.commons.lang3.Validate;
 import org.apache.poi.ss.usermodel.DateUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.lang.reflect.*;
 import java.util.Date;
@@ -23,7 +22,6 @@ public class ReflectUtils
 
     private static final String CGLIB_CLASS_SEPARATOR = "$$";
 
-    private static Logger logger = LoggerFactory.getLogger(ReflectUtils.class);
 
     /**
      * 调用Getter方法.
@@ -73,7 +71,6 @@ public class ReflectUtils
         Field field = getAccessibleField(obj, fieldName);
         if (field == null)
         {
-            logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
             return null;
         }
         E result = null;
@@ -83,7 +80,6 @@ public class ReflectUtils
         }
         catch (IllegalAccessException e)
         {
-            logger.error("不可能抛出的异常{}", e.getMessage());
         }
         return result;
     }
@@ -97,7 +93,6 @@ public class ReflectUtils
         if (field == null)
         {
             // throw new IllegalArgumentException("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
-            logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
             return;
         }
         try
@@ -106,7 +101,6 @@ public class ReflectUtils
         }
         catch (IllegalAccessException e)
         {
-            logger.error("不可能抛出的异常: {}", e.getMessage());
         }
     }
 
@@ -126,7 +120,6 @@ public class ReflectUtils
         Method method = getAccessibleMethod(obj, methodName, parameterTypes);
         if (method == null)
         {
-            logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
             return null;
         }
         try
@@ -152,7 +145,6 @@ public class ReflectUtils
         if (method == null)
         {
             // 如果为空不报错，直接返回空。
-            logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
             return null;
         }
         try
@@ -345,7 +337,6 @@ public class ReflectUtils
 
         if (!(genType instanceof ParameterizedType))
         {
-            logger.debug(clazz.getSimpleName() + "'s superclass not ParameterizedType");
             return Object.class;
         }
 
@@ -353,13 +344,10 @@ public class ReflectUtils
 
         if (index >= params.length || index < 0)
         {
-            logger.debug("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "
-                    + params.length);
             return Object.class;
         }
         if (!(params[index] instanceof Class))
         {
-            logger.debug(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
             return Object.class;
         }
 

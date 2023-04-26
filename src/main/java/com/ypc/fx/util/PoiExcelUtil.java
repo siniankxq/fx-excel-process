@@ -16,8 +16,7 @@ import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.*;
 import org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTMarker;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +37,6 @@ import java.util.stream.Collectors;
  * @author ruoyi
  */
 public class PoiExcelUtil<T> {
-	private static final Logger log = LoggerFactory.getLogger(PoiExcelUtil.class);
 
 	public static final String FORMULA_REGEX_STR = "=|-|\\+|@";
 
@@ -273,7 +271,7 @@ public class PoiExcelUtil<T> {
 			for (int i = 0; i < heard.getPhysicalNumberOfCells(); i++) {
 				Cell cell = heard.getCell(i);
 				if (StringUtils.isNotNull(cell)) {
-					String value = this.getCellValue(heard, i).toString();
+					String value = getCellValue(heard, i).toString();
 					cellMap.put(value, i);
 				} else {
 					cellMap.put(null, i);
@@ -716,7 +714,6 @@ public class PoiExcelUtil<T> {
 				addStatisticsData(column, Convert.toStr(value), attr);
 			}
 		} catch (Exception e) {
-			log.error("导出Excel失败{}", e);
 		}
 		return cell;
 	}
@@ -896,7 +893,6 @@ public class PoiExcelUtil<T> {
 			Method formatMethod = excel.handler().getMethod("format", new Class[]{Object.class, String[].class});
 			value = formatMethod.invoke(instance, value, excel.args());
 		} catch (Exception e) {
-			log.error("不能格式化数据 " + excel.handler(), e.getMessage());
 		}
 		return Convert.toStr(value);
 	}
@@ -1276,7 +1272,7 @@ public class PoiExcelUtil<T> {
 		try {
 			method = pojoClass.getMethod(getMethodName.toString(), new Class[]{});
 		} catch (Exception e) {
-			log.error("获取对象异常{}", e.getMessage());
+			System.err.println("获取对象异常{}" + e.getMessage());
 		}
 		return method;
 	}

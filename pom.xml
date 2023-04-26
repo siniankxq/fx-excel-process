@@ -83,45 +83,38 @@
             <version>5.8.18</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>1.18.26</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.36</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
 <!--        <dependency>-->
 <!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-log4j12</artifactId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
 <!--            <version>1.7.36</version>-->
-<!--&lt;!&ndash;            <type>pom</type>&ndash;&gt;-->
 <!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.20.0</version>
-        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.20.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.20.0</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-slf4j-impl</artifactId>-->
+<!--            <version>2.20.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-core</artifactId>-->
+<!--            <version>2.20.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-api</artifactId>-->
+<!--            <version>2.20.0</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
@@ -135,13 +128,13 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.26</version>
-                        </path>
-                    </annotationProcessorPaths>
+<!--                    <annotationProcessorPaths>-->
+<!--                        <path>-->
+<!--                            <groupId>org.projectlombok</groupId>-->
+<!--                            <artifactId>lombok</artifactId>-->
+<!--                            <version>1.18.26</version>-->
+<!--                        </path>-->
+<!--                    </annotationProcessorPaths>-->
                 </configuration>
             </plugin>
 
@@ -199,6 +192,9 @@
                 <configuration>
                     <target>host</target>
                     <mainClass>${javafxmainclass.custom}</mainClass>
+<!--                    <nativeImageArgs>-->
+
+<!--                    </nativeImageArgs>-->
                     <reflectionList>
                         <list>com.ypc.fx.controller.ExcelProcessController</list>
                     </reflectionList>
