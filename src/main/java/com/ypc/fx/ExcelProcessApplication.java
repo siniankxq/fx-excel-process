@@ -34,6 +34,12 @@ public class ExcelProcessApplication extends Application {
 	}
 
 	public static void main(String[] args) {
+		// 捕捉未处理的异常
+		Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
+			// 抛出栈信息
+			log.error("异常了", e);
+			System.out.println("异常了" + e.getMessage());
+		});
 		launch();
 	}
 }

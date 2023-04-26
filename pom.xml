@@ -198,6 +198,24 @@
                 <version>${gluonfx.maven.plugin.version.custom}</version>
                 <configuration>
                     <target>host</target>
+                    <nativeImageArgs>
+<!--                        <nativeImageArg>&#45;&#45;no-fallback</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.PatternLayout</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.Layout</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.slf4j.MDC</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.slf4j.LoggerFactory</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.helpers.Loader</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.Logger</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.helpers.LogLog</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.LogManager</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.apache.log4j.spi.LoggingEvent</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.slf4j.impl.Log4jLoggerFactory</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=org.slf4j.impl.Log4jLoggerAdapter</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=com.lang.server.handler.FarChannelHandler</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=java.beans.Introspector</nativeImageArg>-->
+<!--                        <nativeImageArg>&#45;&#45;initialize-at-build-time=com.sun.beans.introspect.ClassInfo</nativeImageArg>-->
+                    </nativeImageArgs>
                     <mainClass>${javafxmainclass.custom}</mainClass>
                     <reflectionList>
                         <list>com.ypc.fx.controller.ExcelProcessController</list>
