@@ -98,7 +98,7 @@ public class ExcelProcessController {
 					alert.show();
 				} catch (Exception e) {
 					Alert alert = new Alert(Alert.AlertType.WARNING);
-					alert.setContentText("文件处理异常，请重试");
+					alert.setContentText("文件处理异常，请重试"+ e.getMessage());
 					alert.show();
 				}
 			} catch (NumberFormatException e) {
