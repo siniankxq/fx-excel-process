@@ -1,15 +1,16 @@
 module com.ypc.fx {
 	requires javafx.controls;
 	requires javafx.fxml;
-	requires poi;
-	requires poi.ooxml;
-	requires cn.hutool.poi;
+
 	requires org.apache.commons.lang3;
 	requires java.management;
 	requires org.apache.commons.io;
-	requires poi.ooxml.schemas;
 //	requires org.slf4j;
 	requires cn.hutool.core;
+	requires cn.hutool.poi;
+	requires poi;
+	requires poi.ooxml;
+	requires poi.ooxml.schemas;
 //	requires static lombok;
 
 

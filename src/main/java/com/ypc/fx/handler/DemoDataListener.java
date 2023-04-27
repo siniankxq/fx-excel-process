@@ -3,6 +3,7 @@ package com.ypc.fx.handler;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.ypc.fx.util.PoiExcelUtil;
+import com.ypc.fx.util.ReadExcelUtil;
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.hssf.model.InternalSheet;
 import org.apache.poi.hssf.record.DVRecord;
@@ -71,8 +72,8 @@ public class DemoDataListener {
 //	}
 
 	public static void writeInExcel(File readFile, File writeFile, Map<String, String> mapping, Map<String, Object> defaultMap, int beginRow, int beginCell) throws Exception {
-		ExcelReader reader = ExcelUtil.getReader(readFile);
-		List<Map<String, Object>> mapList = reader.readAll();
+		ReadExcelUtil readExcelUtil = new ReadExcelUtil();
+		List<Map<String, Object>> mapList = readExcelUtil.getExcelInfo(readFile, 0);
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
 		try {
