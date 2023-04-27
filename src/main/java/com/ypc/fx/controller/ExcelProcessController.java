@@ -9,8 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
+import java.io.*;
 
 
 public class ExcelProcessController {
@@ -100,8 +101,14 @@ public class ExcelProcessController {
 					Alert alert = new Alert(Alert.AlertType.WARNING);
 					alert.setContentText("文件处理异常，请重试"+ e.getMessage());
 					alert.show();
+					ByteArrayOutputStream baos = new ByteArrayOutputStream();
+					e.printStackTrace(new PrintStream(baos));
+					String exception = baos.toString();
+					FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\sinia\\Desktop\\error.log");
+					IOUtils.write(exception, fileOutputStream, "UTF-8");
+					IOUtils.close(fileOutputStream);
 				}
-			} catch (NumberFormatException e) {
+			} catch (NumberFormatException | IOException e) {
 				Alert alert = new Alert(Alert.AlertType.WARNING);
 				alert.setContentText("行号必须为数字");
 				alert.show();
